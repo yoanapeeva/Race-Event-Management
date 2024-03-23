@@ -1,12 +1,15 @@
 package bg.fmi.javacourse2024.repository;
 
 import bg.fmi.javacourse2024.model.Racer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+@Component
 public class RacerRepository {
     // structure to store your Racers
     private static Map<Integer, Racer> racerTable = new HashMap<>();
@@ -15,11 +18,12 @@ public class RacerRepository {
      * Add racer to your DB
      * @param racer
      */
-    public void createRacer(Racer racer) {
+    @Autowired
+    public void createRacer(Racer racer, RaceSequence raceSequence) {
         if (racer.getId() != null) {
             throw new IllegalArgumentException("Cannot create Racer with already given ID.");
         }
-        racer.setId(RaceSequence.getNextValue());
+        racer.setId(raceSequence.getNextValue());
         racerTable.put(racer.getId(), racer);
     }
 

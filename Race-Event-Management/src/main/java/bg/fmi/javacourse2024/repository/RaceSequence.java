@@ -1,9 +1,12 @@
 package bg.fmi.javacourse2024.repository;
 
-public class RaceSequence {
-    private static Integer sequence = 1000;
+import org.springframework.stereotype.Component;
 
-    public static Integer getNextValue() {
+@Component
+public class RaceSequence {
+    private Integer sequence = 1000;
+
+    public  Integer getNextValue() {
         return sequence++;
     }
 }
