@@ -1,4 +1,4 @@
-package bg.fmi.javacourse2024.Race.Event.Management;
+package bg.fmi.javacourse2024;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
