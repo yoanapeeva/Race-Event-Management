@@ -1,4 +1,4 @@
-package bg.fmi.javacourse2024.repository;
+package bg.fmi.web.lab.raceeventmanagement.repository;
 
 import org.springframework.stereotype.Component;
 
